@@ -1,4 +1,5 @@
 # Kyle Chung <alienatio@pixnet.net>
+# 2013-10-05
 # The Dragon of Loowater
 
 
@@ -11,7 +12,7 @@ cwd = os.getcwd()
 
 
 # read input sample
-fname = cwd + '\\dragon_loowater.txt'
+fname = cwd + '\\the_dragon_of_loowater.txt'
 with open(fname, 'r') as infile:
     data = [line.strip('\n') for line in infile.readlines()]
 
@@ -30,6 +31,7 @@ def insertion_sort(inst, decreasing=False):
             while (i > -1) & (inst[i] < key):
                 inst.insert(i, inst.pop(i+1))
                 i -= 1
+
     return None
 
 def save_loowater(data):
@@ -52,14 +54,16 @@ def save_loowater(data):
                         break
             if killed < n:
                 print('Loowater is doomed!')
+
     return(None)
 
 save_loowater(data)
 
+
 # test for random input
 ncase = 5
 random_input = []
-for n in range(ncase):
+for nc in range(ncase):
     n, m = random.randint(1,8), random.randint(1,8)
     random_input.append(str(n) + ' ' + str(m))
     for i in range(n):
